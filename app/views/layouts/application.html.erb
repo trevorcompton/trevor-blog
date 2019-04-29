@@ -10,6 +10,12 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= render 'layouts/header' %>
+
+    <%= render 'layouts/sidebar' %>
+
+    <%= yield %> <!-- puts whatever action is coming in, yields to controller action -->
+
+    <%= render 'layouts/footer' %>
   </body>
 </html>

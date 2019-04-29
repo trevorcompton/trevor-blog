@@ -1,0 +1,13 @@
+<%# image_for(@post) %>
+<h1><%= @post.name %></h1>
+<p><%= @post.textfield %></p>
+<h4><%= @post.category %></h4>
+<h4><%= @post.date_published %></h4>
+
+<%# link_to "All Posts", posts_path %> <!-- optional () at the end of the method -->
+<!-- link_to helper method takes two parameters-->
+<!-- posts_path() does not take any parameters because this route:
+     get 'posts' => 'posts#index'
+     doesn't have any parameter after get 'posts'-->
+<%= link_to "Edit", edit_post_path(@post) %> | <!-- link_to uses GET by default -->
+<%= link_to "Delete", post_path(@post), method: :delete, data: {confirm: "Are you sure?"} %>

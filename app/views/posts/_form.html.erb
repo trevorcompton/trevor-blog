@@ -1,0 +1,29 @@
+<%= form_for(@post) do |f| %>
+  <p>
+    <%= f.label :name %><br /> <!-- "f" knows that :name is coming from @post, the name field in the db -->
+    <%= f.text_field :name, autofocus: true %>
+  </p>
+  <!-- these are all helper methods -->
+  <p>
+    <%= f.label :textfield %><br />
+    <%= f.text_area :textfield, cols: 40, rows: 7 %>
+  </p>
+  <p>
+    <%= f.label :category %><br />
+    <%= f.text_field :category %>
+  </p>
+  <p>
+    <%= f.label :date_published %><br />
+    <%= f.text_field :date_published %>
+  </p>
+  <p>
+    <%= f.label :image_file_name %>
+    <%= f.text_field :image_file_name, size: 30, placeholder: "GIF, JPG, or PNG file name" %>
+  </p>
+  <p>
+    <%= f.submit %>
+    <%= link_to "Cancel", posts_path %>
+  </p>
+<% end %>
+
+<!-- break large view templates into smaller ones with partials -->

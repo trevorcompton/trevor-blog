@@ -10,13 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_12_184333) do
+ActiveRecord::Schema.define(version: 2019_04_22_022749) do
 
   create_table "posts", force: :cascade do |t|
     t.string "name"
     t.string "textfield"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "category"
+    t.string "date_published"
+    t.string "image_file_name", default: ""
   end
 
 end
